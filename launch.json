@@ -1,0 +1,22 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "Splitwise",
+    "name": "Splitwise",
+    "symbol": "SPLT",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "TipSplitter",
+      "constructorArgs": ["$token"]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "Deploy Splitwise (SPLT) with no constructor arguments, then TipSplitter with the deployed token address. TipSplitter has no owner, admin or application fee and requires no initialization calls. The first successful depositor registers one to ten permanent members and deposits a positive tip atomically; members pull equal shares of cumulative credited deposits. Direct token transfers are not credited as tips. The pool pairs against native ETH with no hook; initialPrice is decimal sqrtPriceX96, not a promised market valuation. Policy and signed artifact linkage are supplied by services."
+}
